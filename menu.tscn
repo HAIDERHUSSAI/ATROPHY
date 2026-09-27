@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://pikqnk2x0673"]
+
+[ext_resource type="Script" uid="uid://cnpdra1d28ek1" path="res://button.gd" id="1_lti8b"]
+
+[node name="menu" type="Node2D" unique_id=895578420]
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=567223050]
+offset_left = 277.0
+offset_top = 46.0
+offset_right = 763.0
+offset_bottom = 119.0
+text = "Main menu
+"
+editable = false
+
+[node name="Button" type="Button" parent="." unique_id=64746630]
+offset_left = 237.0
+offset_top = 216.0
+offset_right = 872.0
+offset_bottom = 275.0
+text = "play
+"
+script = ExtResource("1_lti8b")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
