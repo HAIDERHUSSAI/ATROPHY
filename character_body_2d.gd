@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const dashSpeed = 4000.0
+const dash = 400
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -21,14 +22,18 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		#supposedly the dash
-		if Input.is_action_just_pressed("shift") and velocity.x > 0:
-			
-				velocity.x += 400 
+		#supposedly the dash nvm it works 
+	
+	if Input.is_action_just_pressed("shift"):
+		
+		#this just asks the velocity yk
+		if velocity.x > 0:
+			velocity.x += 4000
 		elif velocity.x < 0:
 			velocity.x -= 4000
 		else:
-			print("oh shit this dash needs some serious debugging")
+			#uhh yeah so uhh yeah
+			print("oh this dash needs some serious debugging")
 					
 			
 		
