@@ -28,9 +28,9 @@ func _physics_process(delta: float) -> void:
 		
 		#this just asks the velocity yk
 		if velocity.x > 0:
-			velocity.x += 4000
+			velocity.x += 5000
 		elif velocity.x < 0:
-			velocity.x -= 4000
+			velocity.x -= 5000
 		else:
 			#uhh yeah so uhh yeah
 			print("oh this dash needs some serious debugging")

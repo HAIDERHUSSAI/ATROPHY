@@ -20,3 +20,7 @@ shape = SubResource("CapsuleShape2D_50d48")
 position = Vector2(-18, 0.9999999)
 scale = Vector2(0.18359378, 0.64843744)
 texture = ExtResource("1_glpr6")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1196990222]
+offset = Vector2(3, 2)
+position_smoothing_enabled = true
