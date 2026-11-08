@@ -41,6 +41,9 @@ func _physics_process(delta: float) -> void:
 			velocity.y = JUMP_VELOCITY
 			if not is_on_floor():
 				double_jump = false
+	if Input.is_action_just_pressed("ui_accept") and is_on_wall():
+		velocity.y = JUMP_VELOCITY
+		
 			
 				
 			

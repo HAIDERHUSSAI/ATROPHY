@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50d48"]
 size = Vector2(132.42615, 122)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fqg5"]
+size = Vector2(121, 119.01124)
+
 [node name="test level" type="Node2D" unique_id=1991141794]
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1840172795]
@@ -22,3 +25,14 @@ shape = SubResource("RectangleShape2D_50d48")
 [node name="character" parent="." unique_id=1619308626 instance=ExtResource("2_1c2mv")]
 position = Vector2(616, 236)
 scale = Vector2(8.359375, 1)
+
+[node name="Icon2" type="Sprite2D" parent="." unique_id=2084152639]
+position = Vector2(78, 303)
+scale = Vector2(1, 2.78125)
+texture = ExtResource("1_gojnm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Icon2" unique_id=1106566996]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon2/StaticBody2D" unique_id=1733783375]
+position = Vector2(7.5, 3.4157257)
+shape = SubResource("RectangleShape2D_5fqg5")
