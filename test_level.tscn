@@ -2,12 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://7s5gjn3r6ll7" path="res://icon.svg" id="1_gojnm"]
 [ext_resource type="PackedScene" uid="uid://cyh8f3v1tonu" path="res://character.tscn" id="2_1c2mv"]
+[ext_resource type="Script" uid="uid://b0wsal4ptk4rx" path="res://area_2d.gd" id="3_f7g2b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50d48"]
 size = Vector2(132.42615, 122)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5fqg5"]
 size = Vector2(121, 119.01124)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6kn0b"]
+size = Vector2(867, 88)
 
 [node name="test level" type="Node2D" unique_id=1991141794]
 
@@ -36,3 +40,12 @@ texture = ExtResource("1_gojnm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Icon2/StaticBody2D" unique_id=1733783375]
 position = Vector2(7.5, 3.4157257)
 shape = SubResource("RectangleShape2D_5fqg5")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=317707723]
+script = ExtResource("3_f7g2b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1669870273]
+position = Vector2(423.5, 34)
+shape = SubResource("RectangleShape2D_6kn0b")
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

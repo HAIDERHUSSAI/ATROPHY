@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c7wgv5dvc83tk"]
+
+[ext_resource type="Texture2D" uid="uid://7s5gjn3r6ll7" path="res://icon.svg" id="1_a7k7y"]
+[ext_resource type="PackedScene" uid="uid://cyh8f3v1tonu" path="res://character.tscn" id="2_dm6f3"]
+[ext_resource type="Script" uid="uid://1p5ik16ng7dc" path="res://area_3d.gd" id="3_p7b7f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50d48"]
+size = Vector2(129.10349, 122)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fqg5"]
+size = Vector2(513.5, 304)
+
+[node name="room up" type="Node2D" unique_id=2134964006]
+
+[node name="character" parent="." unique_id=1619308626 instance=ExtResource("2_dm6f3")]
+position = Vector2(622, 439)
+scale = Vector2(7.2499995, 1)
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1558313122]
+position = Vector2(652, 583)
+scale = Vector2(7.2499995, 1)
+texture = ExtResource("1_a7k7y")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Icon" unique_id=1432381380]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/StaticBody2D" unique_id=75606061]
+position = Vector2(1.3793106, -1)
+shape = SubResource("RectangleShape2D_50d48")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=908844652]
+script = ExtResource("3_p7b7f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=178941941]
+position = Vector2(-75.25, 624)
+shape = SubResource("RectangleShape2D_5fqg5")
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

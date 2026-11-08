@@ -4,8 +4,10 @@
 [ext_resource type="Script" uid="uid://woe5p4iih2hl" path="res://character_body_2d.gd" id="1_pjt0s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_50d48"]
-radius = 13.0
 height = 80.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5fqg5"]
+height = 74.0
 
 [node name="character" type="Node2D" unique_id=1619308626]
 
@@ -17,10 +19,16 @@ position = Vector2(-17, 2)
 shape = SubResource("CapsuleShape2D_50d48")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=438061168]
-position = Vector2(-18, 0.9999999)
+position = Vector2(-18.000004, 2.0000007)
 scale = Vector2(0.18359378, 0.64843744)
 texture = ExtResource("1_glpr6")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1196990222]
 offset = Vector2(3, 2)
 position_smoothing_enabled = true
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=811610873 groups=["player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D" unique_id=1712587461]
+position = Vector2(-17, 2)
+shape = SubResource("CapsuleShape2D_5fqg5")
