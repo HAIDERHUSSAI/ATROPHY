@@ -5,6 +5,8 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const dashSpeed = 4000.0
 const dash = 400
+var double_jump: bool = true
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -23,7 +25,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		#supposedly the dash nvm it works 
-	
+		if is_on_floor():
+			double_jump = true
 	if Input.is_action_just_pressed("shift"):
 		
 		#this just asks the velocity yk
@@ -34,6 +37,15 @@ func _physics_process(delta: float) -> void:
 		else:
 			#uhh yeah so uhh yeah
 			print("oh this dash needs some serious debugging")
+	if Input.is_action_just_pressed("ui_accept") and not is_on_floor() and double_jump == true:
+			velocity.y = JUMP_VELOCITY
+			if not is_on_floor():
+				double_jump = false
+			
+				
+			
+			
+		
 					
 			
 		
